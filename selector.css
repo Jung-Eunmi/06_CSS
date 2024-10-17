@@ -1,0 +1,88 @@
+/* HTML 문서 내에 스타일 정의 -> 내부 스타일 시트 방식 */
+
+        /* 속성 값과 일치하는 객체(태그, 요소) 선택 (태그별로 하나의 객체라고 생각해주면 됨) */
+        div[name = name2] {
+            background: orange;
+        }
+
+        /* 속성 안의 값이 특정 값을 띄어쓰기 단위로 포함하는 객체 선택 */
+        div[name ~= name6] {
+            background: yellow;
+            /* ( ~= ) : 띄어쓰기를 인식 */
+        }
+
+        /* 속성 값이 특정 값과 일치하거나 '-' 문자가 곧바로 해당 값 뒤에 붙는 객체 선택 */
+        div[class |= class] {
+            background: cadetblue;
+            /* ( |= )  : class 혹은 class- */
+        }
+
+        /* 속성 값을 가지고 있으며, 접두사로 값이 포함되어 있는 객체 선택 */
+        div[name ^= name] {
+            background: blue;
+            /* ( ^= ) : 시작하는 값 */
+            /* 우선순위가 동일하여 위에서 아래순으로 blue 색으로 덮힘 */
+        }
+
+        /* 속성 안의 값이 특정 값으로 끝나는(접미사) 객체 선택 */
+        div[class $= class] {
+            color: wheat;
+            /* ( $= ) : 끝나는 값 */
+        }
+
+        /* 속성 안의 값이 특정 값을 포함하는 객체 선택 */
+        div[class *= div] {
+            background: rebeccapurple;
+            color: aquamarine;
+            /* ( *= ) : 포함하는 값 */
+        }
+
+        /* 자손 선택자 테스트 */
+        #test1>h4 {
+            background: hotpink;
+        }
+
+        /* 후손 선택자 테스트 */
+        #test1 ul {     /* 후손을 선택할 때는 띄어쓰기로 알려줘야함 */
+            background: yellow;
+        } 
+
+        /* 자식이 아니기 때문에 > 를 사용할 수 없음 */ 
+        /* #test1>ul>li {
+            background: cyan;
+        } */
+         
+        /* 형제 관계 선택자(동위 선택자) */
+        /* 03_css선택자3 에 설명 */
+
+        /* CSS 에서 제공하는 이벤트 관련 선택자 */
+        #active-test:active {
+            background: red;
+            color: white;
+        }
+
+        #hover-test:hover {
+            cursor: pointer;
+            background: darkgreen;
+            color: white;
+            font: 60px bold;
+        }
+
+        input[type=checkbox]:checked {
+            width: 100px;
+            height: 100px;
+        }
+
+        #userId:focus, #userPwd:focus {  /* 다른 것을 동일한 기준을 설정하고 싶을 때 나열연산자(,) 사용 가능*/
+            background: hotpink;
+        }
+
+        option:enabled {
+            background: rgb(116, 83, 206);
+        }
+
+        option:disabled {                 /* disabled 작성해놓아서 선택을 못하게 막아놓은 것 */
+            background: red;
+        }
+
+    
