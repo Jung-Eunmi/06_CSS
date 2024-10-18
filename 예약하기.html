@@ -1,0 +1,164 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>예약하기</title>
+        <style>
+            body {
+                background-color:#FAE2B5;
+            }
+
+            .container {
+                position: relative; /* 툴팁 위치를 부모 요소 기준으로 설정 */
+                display: inline-block; /* 요소를 inline-block으로 설정하여 원하는 위치에 배치 */
+                cursor: pointer; /* 마우스 커서를 포인터로 변경 */
+            }
+    
+            .tooltip {
+                visibility: hidden; /* 기본 상태에서는 보이지 않음 */
+                width: 500px; /* 툴팁 너비 설정 */
+                background-color: #fa9b4e; /* 툴팁 배경색 설정 */
+                color: #fff; /* 툴팁 글자 색상 설정 */
+                text-align: center; /* 텍스트 중앙 정렬 */
+                padding: 5px 0; /* 내부 여백 설정 */
+                border-radius: 6px; /* 모서리 둥글게 설정 */
+                
+                /* 툴팁 위치 설정 */
+                position: absolute;
+                bottom: 125%; /* 요소 위에 표시되도록 위로 이동 */
+                left: 50%;
+                transform: translateX(-50%); /* 수평으로 중앙에 맞춤 */
+                
+                opacity: 0; /* 기본 상태에서 투명도 설정 */
+                transition: opacity 0.3s; /* 부드러운 표시 애니메이션 */
+            }
+    
+            .container:hover .tooltip {
+                visibility: visible; /* 마우스를 올리면 보이도록 설정 */
+                opacity: 1; /* 불투명하게 변경 */
+            }
+    
+            .container .tooltip::after {
+                content: ''; /* 삼각형 모양 추가 */
+                position: absolute;
+                top: 100%; /* 툴팁 아래에 위치 */
+                left: 50%;
+                margin-left: -5px;
+                border-width: 5px;
+                border-style: solid;
+                border-color: #fa9b4e transparent transparent transparent; /* 삼각형 색상 설정 */
+            }
+
+            #text {
+            font-size: 30px; /* 글씨 크기 설정 */
+            color: #333; /* 글씨 색상 설정 */
+        }
+
+
+        .containertwo {
+            display: flex; /* Flexbox를 사용하여 정렬 */
+            justify-content: center; /* 수평 중앙 정렬 */
+            align-items: center; /* 수직 중앙 정렬 */
+            height: 100px; /* 화면 전체 높이 설정 */
+        }
+
+        .button {
+            padding: 15px 30px; /* 버튼 크기 설정 */
+            background-color: #ce420a; /* 배경색 설정 */
+            color: white; /* 텍스트 색상 설정 */
+            border: none; /* 테두리 제거 */
+            border-radius: 5px; /* 모서리 둥글게 설정 */
+            cursor: pointer; /* 마우스를 올렸을 때 포인터 모양 */
+            font-size: 16px; /* 텍스트 크기 */
+        }
+
+        .button:hover {
+            background-color: #853806; /* 호버 시 배경색 변경 */
+        }
+        </style>
+    </head>
+    <body>
+        <a href='메인.html'>
+            <img src="sample\image\뒤로.PNG" style="margin-left: 1600px; width:100px; height:50px;">
+        </a>
+
+        <pre id="text"><h1>                   🎂케익 주문 양식🎂</h1></pre>
+
+
+        <div class="container">
+            <pre><h1>                                             1. 픽업 날짜 및 시간  :  화/4시                                      </h1></pre>
+            <div class="tooltip">
+                <pre>
+(화~토 / 12시반 ~ 6시반)
+                </pre>
+            </div>
+        </div>
+        <br>
+
+
+        <div class="container">
+            <pre><h1>                                             2. 케익 디자인 스케치  :  하트모양                                   </h1></pre>
+            </div>
+        </div>
+        <br>
+
+        <div class="container">
+            <pre><h1>                                             3. 케익 크기 선택  :  2호                                           </h1></pre>
+            <div class="tooltip">
+                <pre>
+-1호 : 지름 약 15cm, 높이 7cm 내외
+                
+-2호 : 지름 약 18cm, 높이 7cm 내외
+* 디자인에 따라 기본가+추가금 가격 책정 *
+*빈티지 케익, 복잡한디자인요소, 너무 진하거나 다양한 색 사용,
+꽃장식, 하트모양케익 등은 추가금 많이 발생*
+                </pre>
+            </div>
+        </div>
+        <br>
+
+        <div class="container">
+            <pre><h1>                                             4. 케익 시트 7종 중 택1  :  초코                                       </h1></pre>
+            <div class="tooltip">
+                <pre>
+시트 종류 : 바닐라, 초코, 얼그레이, 말차, 인절미, 흑임자, 모카
+                </pre>
+            </div>
+        </div>
+        <br>
+
+        <div class="container">
+            <pre><h1>                                             5. 필링 생크림 7종 중 택1  :  바닐라                                     </h1></pre>
+            <div class="tooltip">
+                <pre>
+필링 종류 : 바닐라, 초코, 얼그레이, 말차, 인절미, 흑임자, 모카
+                </pre>
+            </div>
+        </div>
+        <br>
+
+        <div class="container">
+            <pre><h1>                                              6. 취소 환불 규정                                                      </h1></pre>
+            <div class="tooltip">
+                <pre>
+- 픽업 일주일 전 100프로 환불
+                
+- 픽업 2~6일전 50프로 환불
+                
+- 픽업 하루 전 또는 당일 환불 불가
+                </pre>
+            </div>
+        </div>
+        <br>
+        <div class="containertwo">
+            <button class="button">예약하기</button>
+        </div>
+    
+    
+
+    
+    </body>
+    </html>
+</body>
+</html>
